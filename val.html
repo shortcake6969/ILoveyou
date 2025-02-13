@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can you make me lucky and be my Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+        }
+        #gif-container img {
+            width: 300px;
+            transition: width 0.3s ease-in-out;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: lightgreen;
+        }
+        .no {
+            background-color: red;
+            color: white;
+        }
+        #valentine-gif {
+        transition: width 0.3s, height 0.3s, transform 0.3s;
+    }
+    </style>
+</head>
+<body>
+    <h1>Can you make me lucky and be my Valentine? ❤️</h1>
+    <div id="gif-container">
+        <img id="valentine-gif" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanFncm83ZXo3cWRtdHdwM3I5bG13Z29mcTFyejUyeHNveDMyZjJ5dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KztT2c4u8mYYUiMKdJ/giphy.gif" alt="Cute GIF">
+    </div>
+    <div class="buttons" id="button-container">
+        <button class="yes" onclick="handleYes()">YES</button>
+        <button class="no" onclick="handleNo()">NO</button>
+    </div>
+    <p id="response"></p>
+
+        <p id="response"></p>
+    
+                <script>
+            let noCount = 0;
+            function handleNo() {
+                const responses = [
+                    "Wtf",
+                    "Bitchhh??",
+                    "Nu’uhh",
+                    "tb tmm awy we’re done effective 2pm tmw"
+                ];
+                if (noCount < responses.length) {
+                    document.getElementById("response").innerText = responses[noCount];
+                    noCount++;
+                }
+                let gif = document.getElementById("valentine-gif");
+                gif.src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmJ1cjh4MXYyNDJvN3JudGc5MHJtbnQxaWdsa3d3NGtkZHd1ZHhvYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lD2qFeJzjtG52UDtCm/giphy.gif"; // Change to the new GIF URL
+                gif.style.width = (300 + noCount * 150) + "px"; // Increase size even more
+                
+                if (noCount === responses.length) {
+                    document.getElementById("button-container").innerHTML = '<button class="yes" onclick="handleYes()">YES</button>';
+                }
+            }
+            
+            function handleYes() {
+                let responseText = "";
+                let gif = document.getElementById("valentine-gif");
+                if (noCount === 0) {
+                    responseText = "duh";
+                    gif.src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmEzdWI0a3BscXlnaWFtYzllazVkeTBlbXQzeGY5MHQxemE1MHJ6aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UI4pWjl2jAVBrN3FLF/giphy.gif"; // Change to the new GIF URL
+                } else {
+                    responseText = "wrong answer, right answer would be ofc babe";
+                }
+                document.getElementById("response").innerText = responseText;
+            }
+        </script>
+        </body>
+        </html>
+</body>
+</html>
